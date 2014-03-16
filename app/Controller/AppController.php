@@ -44,21 +44,7 @@ class AppController extends Controller {
 	 	$this->Auth->authenticate = array('Form' => array('fields' => array('username' => 'mail'),
 	 			'scope'=>array('User.activate' => 1)
 	 	));
-// 	 	$this->Auth->authError =  'No authorized';
-// 	 	$this->Auth->authorize = array('Controller');
-	 	// 	 	$this->Auth->userModel = 'User';
-	 	// 	 	$this->Auth->loginAction = array('controller'=>'users', 'action'=>'login');
-	 	// 	 	$this->Auth->fields = array('username' => 'mail', 'password' => 'password');
-	 	// 	 	$this->Auth->scope = array('User.activated' => 1);
-
-	 	// 	 	       $this->Auth->loginRedirect = '/admin/articles';
-	 	// 	 	       $this->Auth->loginError = "Identifiant ou mot de passe incorrects.";
-	 	// 	 	       $this->Auth->logoutRedirect = '/';
-	 	// 	        $this->Auth->authError = "Vous n'avez pas accès à cette page.";
 	 	$this->Auth->autoRedirect = false;
-	 	// 	 	//       $this->Auth->authorize = 'controller';
-
-// 	 	$this->Auth->allow('view', 'index');
 	 		 	$this->Auth->allow();
 
 	 }
