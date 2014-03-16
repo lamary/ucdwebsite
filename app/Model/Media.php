@@ -37,20 +37,7 @@ class Media extends AppModel {
 		}
 	}
 
-	// 	function afterFind($results, $primary = false){
-	// 		foreach ($results as $key => $val) {
-	// 			if (isset($val['Media']['date'])) {
-	// // 				$results[$key]['Media']['date'] = $this->dateFormatAfterFind($val['Media']['date']);
-	// 				$results[$key]['Media']['date'] = $val['Media']['date'];
-	// 			}
 
-	// 		}
-	// 		return $results;
-	// 	}
-
-	// 	public function dateFormatAfterFind($dateString) {
-	// 		return date('Y', strtotime($dateString));
-	// 	}
 	/**
 	 * belongsTo associations
 	 *
