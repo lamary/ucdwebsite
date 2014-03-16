@@ -1,0 +1,14 @@
+
+Extracts values of 14-05-2013
+
+2013
+
+  - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed egestas urna. Pellentesque eget libero et augue congue bibendum in sit amet lorem. Cras sagittis, magna ac condimentum placerat, eros urna sodales neque, non eleifend justo mauris a lorem. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent nisi turpis, varius et fringilla ac, interdum vel metus. Fusce nunc urna, pharetra a egestas vel, feugiat at nulla. Maecenas tristique est eu purus dictum placerat. Phasellus dolor tellus, molestie ac sollicitudin at, vulputate non leo. Nullam eget enim libero. 
+  - test
+  - test
+2010
+
+  - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed egestas urna. Pellentesque eget libero et augue congue bibendum in sit amet lorem. Cras sagittis, magna ac condimentum placerat, eros urna sodales neque, non eleifend justo mauris a lorem. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent nisi turpis, varius et fringilla ac, interdum vel metus. Fusce nunc urna, pharetra a egestas vel, feugiat at nulla. Maecenas tristique est eu purus dictum placerat. Phasellus dolor tellus, molestie ac sollicitudin at, vulputate non leo. Nullam eget enim libero. 
+2003
+
+ - NO REFERENCE

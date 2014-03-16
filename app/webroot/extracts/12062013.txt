@@ -1,0 +1,9 @@
+
+Extracts values of 12-06-2013
+
+2013
+
+  - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel turpis ac sapien ornare fermentum at at velit. Aliquam erat volutpat. Integer at orci in orci interdum gravida. Sed non purus sed arcu sagittis dictum. Aenean at quam urna, eget tristique metus. Curabitur ligula urna, iaculis id varius non, sagittis sed metus. Morbi ac dolor enim, vitae malesuada libero. Pellentesque vitae nisi dui, nec bibendum turpis. Maecenas placerat nibh non velit tempus pharetra. Aliquam dui purus, iaculis at suscipit non, rhoncus eu urna. Nulla quis diam nibh, rutrum dignissim nibh.
+2012
+
+  - Corcoran, P.; Mooney, P.; Bertolotto, M. Spatial Relations Using High Level Concepts. ISPRS Int. J. Geo-Inf. 2012, 1, 333-350
