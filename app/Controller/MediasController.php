@@ -13,14 +13,11 @@ class MediasController extends AppController {
 	 * @return void
 	*/
 	public function index() {
-		// 		$this->Media->recursive = 0;
 		$nameProjects = $this->Media->Project->find('all',array('group'=>array('Project.name'),
 				'order'=>array('YEAR(Project.stardate) ASC')));
 
-		// 		$yearMedia 	  = $this->Media->find('list',array('fields'=>'Media.created')));
 		$this->set('medias', $this->paginate());
 		$this->set('nameProjects',$nameProjects);
-		// 		$this->set('yearMedia',$yearMedia);
 	}
 
 	/**
@@ -38,7 +35,6 @@ class MediasController extends AppController {
 		$conditions = array("Media.id" => $id);
 		$this->set('media', $this->Media->find('all',  array('conditions' => $conditions, 'group'=>'Media.date')));
 
-		// 		$this->set('media', $this->Media->read(null, $id));
 	}
 
 	/**
@@ -138,7 +134,6 @@ class MediasController extends AppController {
 		if(isset($sessionId) && !empty($sessionId)){
 			$projects = $this->Media->Project->find('list');
 			$this->set(compact('projects'));
-			// 			$this->layout = 'whitoutmenu';
 		}
 	}
 	function _etatDuRepertoire($link){
@@ -353,9 +348,6 @@ class MediasController extends AppController {
 	 * @return void
 	 */
 	public function delete($id = null) {
-		// 		if (!$this->request->is('post')) {
-		// 			throw new MethodNotAllowedException();
-		// 		}
 		if(isset($_GET['action']) && $_GET['action'] == "delete"){
 			$this->Media->id = $_GET['id'];
 			if (!$this->Media->exists()) {
@@ -375,15 +367,11 @@ class MediasController extends AppController {
 				$array['idtable']  	= $_GET['idtable'];
 				echo json_encode($array);
 				exit;
-				// 				$this->Session->setFlash('Media deleted ', 'default', array('class'=>'alert alert-success'));
-				// 				$this->redirect($this->referer());
 			}
 			$array['message'] = 'Publication was not deleted.';
 			$array['statut']  = 'error';
 			echo json_encode($array);
 			exit;
-			// 			$this->Session->setFlash('Media was not deleted', 'default', array('class'=>'alert alert-error'));
-			// 			$this->redirect($this->referer());
 		}else {throw new MethodNotAllowedException();
 		}
 	}
@@ -430,8 +418,7 @@ class MediasController extends AppController {
 			$this->response->file('extracts/'.date("dmY").'.txt', array('download' => true, 'name' => date("dmY").'.txt'));
 			$this->autoRender = false;
 
-			// 			$this->Session->setFlash('file extract created with success', 'default', array('class'=>'alert alert-success'));
-
+			
 		}else{
 			$this->redirect('/');
 			$this->Session->setFlash('ERROR Extract', 'default', array('class'=>'alert alert-error'));
