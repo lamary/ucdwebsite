@@ -17,13 +17,9 @@ class ProjectsController extends AppController {
 	 * @return void
 	*/
 	public function index() {
-		// 		$this->Project->recursive = 0;
-		// 		debug($this->Project->find('all', array('contain' => 'User')));
 
 		$this->Project->find('all', array('contain' => 'User'));
 		$this->set('projects', $this->paginate());
-		// 		$user = $this->Project->User->find('all', array('recursive' => 1));
-		// 		debug($user);
 
 		$this->add();
 	}
