@@ -82,14 +82,11 @@ class CollaboratorsController extends AppController {
 			if($this->RequestHandler->isAjax()) {
 				if ($this->Collaborator->validates()) {
 					if ($this->Collaborator->save($this->request->data)) {
-// 						$this->Session->setFlash(__('The collaborator has been saved'));
-// 						$this->redirect(array('action' => 'index'));
 						$array['message'] = 'The collaborator has been updated';
 						$array['statut']  = 'success';
 						echo json_encode($array);
 						exit;
 					} else {
-// 						$this->Session->setFlash(__('The collaborator could not be saved. Please, try again.'));
 						$array['message'] = 'The collaborator could not be updated. Please, try again.';
 						$array['statut']  = 'error';
 						echo json_encode($array);
