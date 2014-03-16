@@ -10,7 +10,6 @@ echo $this->Html->script('wysiwyg/ckeditor/adapters/jquery');
 			<div class="blockColl">
 				<h4>General information :</h4>
 				<?php 
-// 				$checkM= "";$checkO ="";
 				foreach($project['User'] as $sizeUser) {
 					if(sizeof($project['User'])== 1 && $sizeUser['id'] == $this->Session->read('Auth.User.id')){
 						$checkM ='checked="checked"';
@@ -27,7 +26,6 @@ echo $this->Html->script('wysiwyg/ckeditor/adapters/jquery');
 				echo '<hr><div class="block"><h4>Members :</h4>';
 				//Project Manager
 				if($this->Session->read('Auth.User.admin') === true){
-// 					debug($project);
 					echo '<div style="margin-right:6%;margin-left:5%;"><strong>Project Manager</strong><br /><br />
 						<div class="input select required">
 						<select id="ProjectManager" name="data[Project][manager]">
@@ -40,7 +38,6 @@ echo $this->Html->script('wysiwyg/ckeditor/adapters/jquery');
 					echo '</select>
 						</div></div>';
 							
-// 							$this->Form->input('Project.User',array('label'=> false,'type'=>'select','id'=>'ProjectManager','name'=>'data[Project][manager]','empty'=>'Online Administrator')).'</div>';
 				}else{
 					echo '<div style="margin-right:15%"><strong>Project Manager : </strong><br /><br />'.$this->Session->read('Auth.User.name').' '.$this->Session->read('Auth.User.surname').'</div>';
 				}
