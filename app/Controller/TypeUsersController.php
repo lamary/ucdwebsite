@@ -42,16 +42,12 @@ class TypeUsersController extends AppController {
 						$array['message'] = 'Type User Added';
 						$array['statut']  = 'success';
 						echo json_encode($array);
-						exit;
-						// 					$this->Session->setFlash(__('The type user has been saved'));
-						// 					$this->redirect(array('action' => 'index'));
-					} else {
+						exit;	} else {
 						$array['message'] = 'Error added.Please, try again.';
 						$array['statut']  = 'error';
 						echo json_encode($array);
 						exit;
-						// 					$this->Session->setFlash(__('The type user could not be saved. Please, try again.'));
-					}
+						}
 				}else{
 					$array['message'] = 'ERROR fields';
 					$array['data'] = array('TypeUser'=>$this->TypeUser->error_messages());
@@ -105,14 +101,11 @@ class TypeUsersController extends AppController {
 
 				if ($count == 0) {
 					if ($this->TypeUser->save($this->request->data, array('validate' => false))) {
-						// 					$this->Session->setFlash(__('The type user has been saved'));
-						// 					$this->redirect(array('action' => 'index'));
 						$array['message'] = 'Order Type Members updated';
 						$array['statut']  = 'success';
 						echo json_encode($array);
 						exit;
 					} else {
-						// 					$this->Session->setFlash(__('The type user could not be saved. Please, try again.'));
 						$array['message'] = 'Error update.Please, try again.';
 						$array['statut']  = 'error';
 						echo json_encode($array);
