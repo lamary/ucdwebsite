@@ -41,9 +41,6 @@ class UsersController extends AppController {
 				$pwd		   =  AuthComponent::password($this->request->data['User']['password']);
 				$activeaccount = $this->User->find('count', array('conditions' => array('User.mail' => $mail,'User.password'=>$pwd)));
 
-				// 				settype($activeaccount, "int");
-				// 				$activeaccount = "1";
-				// 				debug(gettype($activeaccount));
 				if($activeaccount){
 					$this->Session->setFlash('Your mail exist but your account is not activated =>
 							<span id="activateaccount" style="cursor:pointer"><u> Activated your account.</u><span>', 'default', array('class'=>'alert alert-info'));
@@ -88,13 +85,12 @@ class UsersController extends AppController {
 			$mail = $_POST['UserMailPswdLost'];
 			$userLostMail = $this->User->find('first',array('conditions'=> array('mail'=>$mail,'activate'=>1)));
 			if(empty($userLostMail)){
-				// 				$this->Session->setFlash('No members matchs with this mail.', 'default', array('class'=>'alert alert-error'));
 				$array['message'] = 'No members matchs with this mail or your account is not activated.';
 				$array['statut']  = 'error';
 				echo json_encode($array);
 				exit;
 			}else{
-				// 				debug($userLostMail);
+			
 				$link = array('controller'=>'users','action'=>'lostpswd',$userLostMail['User']['id'].'-'.sha1($userLostMail['User']['password']));
 				App::uses('CakeEmail','Network/Email');
 				$mailPwd = new CakeEmail('laposte');
@@ -112,7 +108,6 @@ class UsersController extends AppController {
 				$array['statut']  = 'success';
 				echo json_encode($array);
 				exit;
-				// 				$this->Session->setFlash('Please, check your mail for generate a new password', 'default', array('class'=>'alert alert-success'));
 			}
 		}
 	}
@@ -124,11 +119,7 @@ class UsersController extends AppController {
 	 * @return void
 	 */
 	public function view($id = null) {
-		// 		$this->User->id = $id;
-		// 		if (!$this->User->exists()) {
-		// 			throw new NotFoundException(__('Invalid user'));
-		// 		}
-		// 		$this->set('user', $this->User->read(null, $id));
+
 
 		if (!$this->User->exists($id)) {
 			throw new NotFoundException(__('Invalid user'));
@@ -404,9 +395,7 @@ class UsersController extends AppController {
 			throw new NotFoundException(__('Invalid member'));
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
-			// 			debug($this->User->data);
 			$d = $this->request->data;
-			// 			$this->User->set($this->request->data);
 			if($this->RequestHandler->isAjax()){
 				if(!empty($d['User']['pass1'])){
 					if(strlen($d['User']['pass1'])<8){
@@ -423,7 +412,6 @@ class UsersController extends AppController {
 					$passError = true;
 					$errorMsg = array("pass1"=>"Please, Must not be blank","pass2"=>"Please, Must not be blank");
 				}
-				// 				debug($d['User']['password']);
 				$success = $this->User->save($d,true,array('password'));
 				if ($success) {
 					$array['message'] = 'Your password has been updated.';
@@ -444,9 +432,6 @@ class UsersController extends AppController {
 			$this->request->data = $this->User->read(null, $id);
 		}
 		if(isset($sessionId) && !empty($sessionId)){
-			// 			$typeUsers = $this->User->TypeUser->find('list');
-			// 			$projects = $this->User->Project->find('list');
-			// 			$this->set(compact('typeUsers', 'projects'));
 			$this->layout = 'whitoutmenu';
 		}
 	}
